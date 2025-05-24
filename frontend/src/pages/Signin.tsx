@@ -1,9 +1,16 @@
-import React from "react";
+import { Auth } from "../components/Auth"
 
-export const Signin = () => {
-    return(
-        <div className="h-screen bg-red-500  ">
-          Signin
-        </div>
-    )
+import { Quote } from "../components/Quote"
+
+
+export const Signin=()=>{
+    return <div className="grid grid-cols-1 lg:grid-cols-2"> 
+    <div>
+        <Auth type="signin"/>
+    </div>
+    <div >
+    <Quote />
+    </div>
+        
+    </div>
 }
