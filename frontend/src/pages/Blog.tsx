@@ -1,15 +1,27 @@
+import { Appbar } from "../components/Appbar"
+import { FullBlog } from "../components/FullBlog"
+import { Spinner } from "../components/Spinner"
+import { useBlog } from "../hooks"
+import { useParams } from "react-router-dom"
 
-import { BlogCard } from "../components/BlogCard"
 
 export const Blog = () => {
-    return(
-        <div>
-          <BlogCard
-            authorName={"Satvik Tandon"}
-            title={"This is a blog"}
-            content={"Hey, Jude, don't make it bad. Take a sad song and make it better. Remember to let her into your heart. Then you can start to make it better."}
-            publishedDate={"2023-10-01"} 
-            id={1}/>
+
+    const { id } = useParams() || ""
+    const { loading, blog } = useBlog({
+        id: id || ""
+    })
+    if (loading || !blog) {
+        return <div>
+            <Appbar />
+        <div className="h-screen flex flex-col justify-center">
+            <div className="flex justify-center">
+                <Spinner />
+            </div>
+           </div>
         </div>
-    )
+    }
+    return <div>
+        <FullBlog blog={blog} />
+    </div>
 }
