@@ -1,4 +1,4 @@
-# Night Blog - A Medium Clone
+# Night Blogs - A Medium Clone
 
 Night Blog is a full-stack web application inspired by Medium, allowing users to read, write, and share their stories and ideas. It features a clean interface for an enjoyable reading and writing experience.
 
